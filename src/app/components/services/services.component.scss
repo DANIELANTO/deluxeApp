@@ -1,0 +1,11 @@
+.mat-icon-dimension:ng-deep{
+    width: 100px;
+    height: 100px;
+}
+
+::ng-deep{
+    .mat-icon-dimension{
+        width: 112px;
+        height: auto;
+    }
+}
