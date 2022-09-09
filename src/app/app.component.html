@@ -1,60 +1,61 @@
 <mat-drawer-container class="fixed w-full text-right" autosize>
   <mat-drawer #drawer class="w-1/2 sm:w-1/3 bg-blue-800" mode="over" position="end">
-    <ul class="flex flex-col gap-4 text-left pt-8 font-medium text-white">
-      <li class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
+    <ul class="flex flex-col gap-4 text-left pt-8 font-medium text-white fixed">
+      <a href="#Inicio" class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
         <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="home">home</mat-icon>
         <span class="pt-1 pl-1">Inicio</span>
-      </li>
-      <li class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
+      </a>
+      <a href="#SobreNosotros" class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
         <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="home">people</mat-icon>
         <span class="pt-1 pl-1">Sobre nosotros</span>
-      </li>
-      <li class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
+      </a>
+      <a href="#Servicios" class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
         <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="home">directions_car</mat-icon>
         <span class="pt-1 pl-1">Servicios</span>
-      </li>
-      <li class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
+      </a>
+      <a href="#PreguntasFrecuentes" class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
         <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="home">help</mat-icon>
         <span class="pt-1 pl-1">Preguntas frecuentes</span>
-      </li>
-      <li class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
+      </a>
+      <a href="#Contactenos" class="cursor-pointer flex items-center pl-2 py-2 hover:brightness-105 hover:bg-white/20">
         <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="home">contact_page</mat-icon>
         <span class="pt-1 pl-1">Contactenos</span>
-      </li>
+      </a>
     </ul>
   </mat-drawer>
   <div class="w-full">
-    <div class="header-container w-full">
-      <nav class="flex justify-between bg-blue-800">
-        <h1 class="font-medium text-2xl pt-3 pl-4 lg:pl-6 text-white">Transportes Deluxe</h1>
-        <ul class="flex items-center md:text-sm md:gap-4 md:pr-4 lg:text-base lg:gap-6 lg:pr-6 text-white" *ngIf="screenWidth >= 768; else elseBlock">
-          <li class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Inicio</li>
-          <li class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Sobre <span>nosotros</span></li>
-          <li class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Servicios</li>
-          <li class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Preguntas <span>frecuentes</span></li>
-          <li class="cursor-pointer hover:brightness-200 hover:border-b-2 hover:border-b-white">Contactenos</li>
+    <div class="header-container w-full relative">
+      <mat-toolbar class="flex justify-between bg-blue-800 fixed z-50">
+        <div class="monserrat font-semibold text-2xl pl-4 lg:pl-6 text-white">Transportes Deluxe</div>
+        <ul class="monserrat flex items-center md:text-xs md:gap-4 lg:text-base lg:gap-6 lg:pr-6 text-white" *ngIf="screenWidth >= 768; else elseBlock">
+          <a href="#Inicio" class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Inicio</a>
+          <a href="#SobreNosotros" class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Sobre <span>nosotros</span></a>
+          <a href="#Servicios" class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Servicios</a>
+          <a href="#PreguntasFrecuentes" class="cursor-pointer hover:brightness-105 hover:border-b-2 hover:border-b-white">Preguntas <span>frecuentes</span></a>
+          <a href="#Contactenos" class="cursor-pointer hover:brightness-200 hover:border-b-2 hover:border-b-white">Contactenos</a>
         </ul>
         <ng-template #elseBlock>
           <div class="pr-4 flex items-center text-white">
             <mat-icon aria-hidden="false" aria-label="menu icon" fontIcon="home" (click)="drawer.toggle()">menu</mat-icon>
           </div>
         </ng-template>
-      </nav>
-      <div class="bg-blue-800  h-64 relative">
+      </mat-toolbar>
+      <a id="Inicio"></a>
+      <div class="bg-blue-800 h-64 relative translate-y-14 sm:translate-y-5">
         <img 
-          class="absolute top-36 left-10 z-10 max-w-xs
+          class="animate__animated animate__fadeInLeft absolute top-36 left-0 z-10 max-w-xs
                   sm:left-32
                   md:left-0 md:top-14 md:max-w-sm 
                   lg:max-w-full lg:h-auto" 
-          src="../assets/img/toyota hiace.png" 
+          src="https://i.ibb.co/ydwVSdy/toyota-hiace.png" 
           alt="">
         <div 
-          class="font-bold bottom-36 w-full m-0 text-white absolute text-2xl text-center
+          class="animate__animated animate__fadeInLeft monserrat font-bold bottom-36 w-full m-0 text-white absolute text-2xl text-center
                   sm:text-3xl
                   md:text-left md:w-1/3 md:text-4xl md:right-4 md:bottom-0 
                   lg:right-20 lg:text-5xl">
           La mejor opción para trasladarte!
-          <span class="font-medium text-white text-sm block 
+          <span class="animate__animated animate__fadeInLeft monserrat pt-2 font-medium text-white text-sm block 
                         sm:block sm:text-base
                         md:text-base 
                         lg:text-xl">
@@ -63,13 +64,39 @@
         </div>
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1e40af" fill-opacity="1" d="M0,0L60,16C120,32,240,64,360,74.7C480,85,600,75,720,64C840,53,960,43,1080,58.7C1200,75,1320,117,1380,138.7L1440,160L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+      <p class="flex justify-center items-center relative">
+        <a href="#Contactenos" mat-raised-button 
+            class="bg-blue-800 text-white text-center absolute
+                   -bottom-20
+                   sm:bottom-8 sm:w-40 sm:h-10 sm:text-base
+                   md:bottom-16  xl:bottom-24 
+                   lg:bottom-12 lg:w-48 lg:h-12 lg:text-xl
+                   monserrat animate__animated animate__fadeIn">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="chat">perm_phone_msg</mat-icon>
+          <span>Contáctenos</span>
+        </a>
+      </p>
     </div>
   </div>
-  <div class="aboutUs-container w-full">
+  <div class="aboutUs-container w-full opacity-100 md:opacity-0"
+        [ngClass]="{'opacity-100 animate__animated animate__fadeIn': progress > 1 && screenWidth >= 768 || screenHeight > 705|| panelOpenGeneralState === true}">
+    <a id="SobreNosotros"></a>
     <app-aboutUs></app-aboutUs>
   </div>
-  <div class="services-container w-full">
+  <div class="services-container w-full opacity-100 md:opacity-0" 
+        [ngClass]="{'opacity-100 animate__animated animate__fadeIn': progress > 30 && screenWidth >= 768 || screenHeight > 705 || panelOpenGeneralState === true}">
+    <a id="Servicios"></a>
     <app-services></app-services>
+  </div>
+  <div class="services-container w-full opacity-100 md:opacity-0" 
+        [ngClass]="{'opacity-100 animate__animated animate__fadeIn': progress > 55 && screenWidth >= 768 || screenHeight > 705|| panelOpenGeneralState === true}">
+    <a id="PreguntasFrecuentes"></a>
+    <app-faq></app-faq>
+  </div>
+  <div class="services-container w-full opacity-100 md:opacity-0" 
+        [ngClass]="{'opacity-100 animate__animated animate__fadeIn': progress > 70 && screenWidth >= 768 || screenHeight > 705|| panelOpenGeneralState === true}">
+    <a id="Contactenos"></a>
+    <app-contactUs></app-contactUs>
   </div>
 </mat-drawer-container>
 

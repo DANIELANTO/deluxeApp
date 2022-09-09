@@ -1,0 +1,184 @@
+<div class="w-full h-auto bg-blue-900/10 px-2 py-20 sm:p-10">
+  <div class="monserrat font-semibold text-xl text-center pb-10">Preguntas frecuentes</div>
+  <div class="expansion-panel-container">
+    <mat-accordion multi>
+      <!-- First question -->
+      <mat-expansion-panel class="py-4 md:p-0" (click)="emitPanelStatusValue()"
+      (opened)="panelOpenState1 = true"
+      (closed)="panelOpenState1 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="monserrat font-semibold text-start">
+            1. ¿Qué instituciones publicas/privadas trabajan con Transportes Deluxe?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent class="pl-0 sm:pl-4">
+          <p class="merriweather font-medium text-left pb-5 pt-5 md:pt-0">
+            Algunas instituciones que pueden dar referencia de nuestros servicios son:
+          </p>
+          <div class="flex flex-wrap flex-col items-center md:flex-row">
+            <div class="flex flex-col items-center gap-4 mb-6 w-auto rounded-lg 
+                        border-2 border-solid border-blue-800/20 shadow-md shadow-blue-800/20 
+                        md:w-1/3 md:border-0 md:shadow-none" *ngFor="let company of companies">
+              <img src={{company.src}} alt={{company.alt}} class="logoInstitution w-24 h-auto pt-2 md:pt-0">
+              <div class="nameInstitution">{{company.name}}</div>
+            </div>
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+      <!-- Second question -->
+      <mat-expansion-panel (click)="emitPanelStatusValue()"
+      (opened)="panelOpenState2 = true"
+      (closed)="panelOpenState2 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="monserrat font-semibold text-start">
+            2. ¿Dónde están ubicados?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent class="pl-0 sm:pl-4">
+          <p class="merriweather font-medium text-left pb-5">
+            Actualmente contamos con una oficina ubicada en Final 15 C. Pte. Y 89 av. norte, Colonia Escalón, San
+            Salvador.
+          </p>
+          <div class="flex justify-center flex-wrap">
+            <img src="https://i.ibb.co/9qQwqRN/deluxe-location.png" alt="deluxe location"
+              class="h-auto w-full sm:w-2/3 md:w-1/2">
+          </div>
+        </ng-template>
+      </mat-expansion-panel>
+      <!-- Third question -->
+      <mat-expansion-panel (click)="emitPanelStatusValue()"
+      (opened)="panelOpenState3 = true"
+      (closed)="panelOpenState3 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="monserrat font-semibold text-start">
+            3. ¿Poseen vacantes disponibles?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent class="pl-0 sm:pl-4">
+          <p class="merriweather font-medium text-justify pb-5">
+            Si posees <span class="merriweather font-semibold">licencia de conducir</span> salvadoreña o conocimientos
+            sobre <span class="merriweather font-semibold">logística</span> y deseas ser parte de nuestro equipo
+            de trabajo envía tu <span class="merriweather font-semibold">currículum</span> a <span
+              class="merriweather font-semibold">deluxe6419@hotmail.com</span> y nosotros nos
+            contactaremos contigo en menos de <span class="merriweather font-semibold">24 horas</span>.
+          </p>
+        </ng-template>
+      </mat-expansion-panel>
+      <!-- Fourth question -->
+      <mat-expansion-panel (click)="emitPanelStatusValue()"
+      (opened)="panelOpenState4 = true"
+      (closed)="panelOpenState4 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="monserrat font-semibold text-start">
+            4. ¿Qué precios manejan?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <ng-template matExpansionPanelContent class="pl-0 sm:pl-4">
+          <p class="text-left merriweather font-medium">
+            Ponemos a tu disposición la siguiente tarifa de precios de nuestros servicios: <span
+              class="text-xs block font-semibold pt-2">*precios pueden variar dependiendo el tipo de vehículo y
+              distancia de recorrido.</span>
+          </p>
+          <div class="flex justify-center flex-wrap my-10 bg-white rounded-2xl p-4 gap-10 md:gap-4">
+            <mat-card class="w-52 h-auto rounded-lg p-4 bg-card shadow-2xl">
+              <div
+                class="monserrat rounded-md text-center text-base text-white font-medium my-4 flex flex-col gap-4 justify-between">
+                <div class="">
+                  <div>Viajes dentro de</div>
+                  <div>San Salvador</div>
+                </div>
+                <div
+                  class="rounded-md text-center text-base bg-white text-blue-800 font-medium flex flex-col gap-4 py-4">
+                  <div class="">desde <span class="text-2xl font-semibold block">$3</span></div>
+                  <div class="h-14">hasta <span class="text-2xl font-semibold block">$15</span></div>
+                </div>
+              </div>
+            </mat-card>
+            <mat-card class="w-52 h-auto rounded-lg p-4 bg-card shadow-2xl">
+              <div
+                class="monserrat rounded-md text-center text-base text-white font-medium my-4 flex flex-col gap-4 justify-between">
+                <div>
+                  <div>Viajes fuera de</div>
+                  <div>San Salvador</div>
+                </div>
+                <div
+                  class="rounded-md text-center text-base bg-white text-blue-800 font-medium flex flex-col gap-6 py-4">
+                  <div>desde</div>
+                  <div class="text-2xl font-semibold block">$15</div>
+                  <div class="">en adelante</div>
+                </div>
+              </div>
+            </mat-card>
+            <mat-card class="w-52 h-auto rounded-lg p-4 bg-card shadow-2xl">
+              <div
+                class="monserrat rounded-md text-center text-base text-white font-medium my-4 flex flex-col gap-4 justify-between">
+                <div class="">
+                  <div>Viajes al oriente</div>
+                  <div>y occidente del país</div>
+                </div>
+                <div
+                  class="rounded-md text-center text-base bg-white text-blue-800 font-medium flex flex-col gap-6 py-4">
+                  <div>desde</div>
+                  <div class="text-2xl font-semibold block">$50</div>
+                  <div class="">en adelante</div>
+                </div>
+              </div>
+            </mat-card>
+            <mat-card class="w-52 h-auto rounded-lg p-4 bg-card shadow-2xl">
+              <div
+                class="monserrat rounded-md text-center text-base text-white font-medium my-4 flex flex-col gap-4 justify-between">
+                <div class="">
+                  <div>Viajes fuera</div>
+                  <div>del país</div>
+                </div>
+                <div
+                  class="rounded-md text-center text-base bg-white text-blue-800 font-medium flex flex-col gap-6 py-4">
+                  <div>desde</div>
+                  <div class="text-2xl font-semibold block">$80</div>
+                  <div class="">en adelante</div>
+                </div>
+              </div>
+            </mat-card>
+          </div>
+          <p class="text-justify merriweather">
+            Si deseas cotizar un viaje con nosotros ponte en contacto con el siguiente
+            correo: <span class="merriweather font-semibold block sm:inline">deluxe6419@hotmail.com</span> o por medio
+            de whatsapp: <span class="merriweather font-semibold block sm:inline">(+503) 7791-9942</span> y nos
+            encargaremos de brindarte asistencia
+            personalizada en menos de <span class="merriweather font-semibold">24 horas</span>.
+          </p>
+        </ng-template>
+      </mat-expansion-panel>
+      <!-- Fiveth question -->
+      <mat-expansion-panel (click)="emitPanelStatusValue()"
+      (opened)="panelOpenState5 = true; "
+      (closed)="panelOpenState5 = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="monserrat font-semibold text-start">
+            5. ¿Con qué tipo de vehiculos cuentan?
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="h-96 w-auto relative flex justify-around items-center">
+          <div class="bg-pink-300 w-60 h-72 flex items-end text-start text-white text-4xl font-medium relative rounded-2xl cursor-pointer">
+            <img class="absolute w-full h-full object-cover rounded-2xl brightness-50 hover:brightness-100"
+                 src="https://i.ibb.co/7S4mLhN/conductore.jpg" alt="family">
+            <span class="z-30 p-4 monserrat">Viajes y Alquiler</span>
+          </div>
+          <div class="bg-pink-300 w-60 h-72 flex items-end text-center text-white text-4xl font-medium relative rounded-2xl cursor-pointer">
+            <img class="absolute w-full h-full object-cover rounded-2xl brightness-50 hover:brightness-100"
+                 src="https://i.ibb.co/1dS8WLQ/carretera.jpg" alt="family">
+            <span class="z-30 p-4 monserrat">Tours</span>
+          </div>
+        </div>
+        <!-- <div matExpansionPanelContent class="pl-0 sm:pl-4">
+          <app-carousel [images]="imagesForViajesyAlquiler"></app-carousel>
+        </div> -->
+
+        <!-- <div matExpansionPanelContent class="pl-0 sm:pl-4">
+          <app-carousel [images]="imagesForTours"></app-carousel>
+        </div> -->
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

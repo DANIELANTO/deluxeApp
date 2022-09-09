@@ -1,0 +1,17 @@
+::ng-deep .mat-icon{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding-top: 4px;
+}
+
+@media (max-width: 886px) {
+    .arrows{
+        background: white;
+        
+    }
+    .arrows:active{
+        background-color: rgb(30 64 175);
+        color: white;   
+    }
+}

@@ -1,0 +1,21 @@
+<div class="bg-blue-800/10 flex relative h-96 justify-center items-center" *ngIf="images && images.length > 0">
+  <div class="absolute left-0 z-40 hover:cursor-pointer text-blue-800 
+            active:bg-blue-800 active:text-white bg-blue-800/20 rounded-full
+              flex justify-center items-center text-left arrows"
+              (click)="moveBack()">
+    <mat-icon class="pl-2" aria-hidden="false" matTooltip="Anterior"
+      aria-label="Example home icon" fontIcon="chat">arrow_back_ios
+    </mat-icon>
+  </div>
+  <img *ngFor="let image of images; let i = index" [src]="image.src" [alt]="image.alt"
+    class="absolute -z-10 h-96 w-full object-cover sm:object-scale-down" [ngClass]="{'z-30': i === activeImg}"
+  >
+  <div class="absolute right-0 z-40 hover:cursor-pointer text-blue-800 
+            active:bg-blue-800 active:text-white bg-blue-800/20 rounded-full
+              flex justify-center items-center text-right arrows"
+              (click)="moveForward()">
+    <mat-icon class="" aria-hidden="false" matTooltip="Siguiente"
+      aria-label="Example home icon" fontIcon="chat">arrow_forward_ios
+    </mat-icon>
+  </div>
+</div>

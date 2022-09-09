@@ -1,11 +1,21 @@
-.mat-icon-dimension:ng-deep{
-    width: 100px;
-    height: 100px;
-}
+// ::ng-deep{
+//     .mat-icon-dimension{
+//         width: 100px;
+//         height: 100px;
+//     }
+// }
 
 ::ng-deep{
     .mat-icon-dimension{
-        width: 112px;
-        height: auto;
+        width: 100px !important;
+        height: auto !important;
     }
+}
+
+.monserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.merriweather{
+    font-family: 'Merriweather', serif;
 }
