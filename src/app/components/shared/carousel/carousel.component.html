@@ -1,4 +1,11 @@
 <div class="bg-blue-800/10 flex relative h-96 justify-center items-center" *ngIf="images && images.length > 0">
+  <div class="absolute right-0 top-0 z-40 rounded-full text-blue-800
+             hover:bg-blue-800/20 hover:cursor-pointer"
+             (click)="onNoClick()">
+    <mat-icon class="mt-0.5" aria-hidden="false"
+      aria-label="Close" fontIcon="chat">cancel
+    </mat-icon>
+  </div>
   <div class="absolute left-0 z-40 hover:cursor-pointer text-blue-800 
             active:bg-blue-800 active:text-white bg-blue-800/20 rounded-full
               flex justify-center items-center text-left arrows"
@@ -8,7 +15,8 @@
     </mat-icon>
   </div>
   <img *ngFor="let image of images; let i = index" [src]="image.src" [alt]="image.alt"
-    class="absolute -z-10 h-96 w-full object-cover sm:object-scale-down" [ngClass]="{'z-30': i === activeImg}"
+    class="absolute -z-10 h-96 w-full object-cover sm:object-scale-down" 
+    [ngClass]="{'z-30': i === activeImg}"
   >
   <div class="absolute right-0 z-40 hover:cursor-pointer text-blue-800 
             active:bg-blue-800 active:text-white bg-blue-800/20 rounded-full

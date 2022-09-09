@@ -19,6 +19,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
+import { CarouselComponent } from './components/shared/carousel/carousel.component';
 
 
 @NgModule({
@@ -28,6 +29,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     ServicesComponent,
     FaqComponent,
     ContactUsComponent
+  ],
+  entryComponents: [
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

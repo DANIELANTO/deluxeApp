@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 export interface Carousel {
   src: string;
@@ -15,7 +16,14 @@ export class CarouselComponent implements OnInit {
   @Input() images: Carousel[] = [];
   activeImg: number = 0;
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<CarouselComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {
+    if(this.images.length === 0){
+      this.images = data.images;
+    }
+  }
 
   ngOnInit() {
   }
@@ -34,6 +42,10 @@ export class CarouselComponent implements OnInit {
     } else {
       this.activeImg++;
     }
+  }
+
+    onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

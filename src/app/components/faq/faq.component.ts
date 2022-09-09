@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Company } from 'src/app/interfaces/interfaces';
 import { MainService } from 'src/app/services/main.service';
-import { Carousel } from '../shared/carousel/carousel.component';
+import { Carousel, CarouselComponent } from '../shared/carousel/carousel.component';
 
 @Component({
   selector: 'app-faq',
@@ -20,7 +21,7 @@ export class FaqComponent implements OnInit {
   panelOpenState5: boolean = false;
 
 
-  constructor(private mainService: MainService) {
+  constructor(private mainService: MainService, public dialog: MatDialog) {
     this.companies = [
       {
         src: "https://i.ibb.co/M1C79QN/escalon-Plaza-Logo-min.jpg",
@@ -108,6 +109,17 @@ export class FaqComponent implements OnInit {
   ngOnInit() {
   }
 
+  openDialog(images: Carousel[]) {
+    const dialogRef = this.dialog.open(CarouselComponent, {
+      width: '90%',
+      data: {images: images},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
   emitPanelStatusValue(): void{
     this.mainService.expansionPanelSubject.next([
       this.panelOpenState1,
@@ -119,3 +131,22 @@ export class FaqComponent implements OnInit {
   }
 
 }
+
+// @Component({
+//   selector: 'dialog-content-example-dialog',
+//   template: `
+//     <div matExpansionPanelContent class="pl-0 sm:pl-4">
+//       <app-carousel [images]=""></app-carousel>
+//     </div>
+//   `,
+// })
+// export class DialogOverviewExampleDialog  {
+//   constructor(
+//     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+//     @Inject(MAT_DIALOG_DATA) public data: any,
+//   ) {}
+
+//   onNoClick(): void {
+//     this.dialogRef.close();
+//   }
+// }
