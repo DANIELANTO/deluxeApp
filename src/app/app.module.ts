@@ -10,6 +10,7 @@ import { ContactUsComponent } from './components/contactUs/contactUs.component';
 import { SharedModule } from './components/shared/shared.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClipboardModule } from 'ngx-clipboard';
 
 //Angular material
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -20,6 +21,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CarouselComponent } from './components/shared/carousel/carousel.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { CarouselComponent } from './components/shared/carousel/carousel.compone
     MatExpansionModule,
     MatToolbarModule,
     SharedModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
