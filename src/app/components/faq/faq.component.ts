@@ -29,7 +29,7 @@ export class FaqComponent implements OnInit {
         name: "Hotel mediterraneo plaza"
       },
       {
-        src: "https://i.ibb.co/3T2TzJ2/fondo-fundemas-header-min.png",
+        src: "https://i.ibb.co/1TZDTWH/acosa-Logo-min.png",
         alt: "Acosa S.A. de C.V.",
         name: "Acosa S.A. de C.V."
       },
@@ -131,22 +131,3 @@ export class FaqComponent implements OnInit {
   }
 
 }
-
-// @Component({
-//   selector: 'dialog-content-example-dialog',
-//   template: `
-//     <div matExpansionPanelContent class="pl-0 sm:pl-4">
-//       <app-carousel [images]=""></app-carousel>
-//     </div>
-//   `,
-// })
-// export class DialogOverviewExampleDialog  {
-//   constructor(
-//     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-//     @Inject(MAT_DIALOG_DATA) public data: any,
-//   ) {}
-
-//   onNoClick(): void {
-//     this.dialogRef.close();
-//   }
-// }
